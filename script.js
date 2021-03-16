@@ -1,8 +1,20 @@
+//Page Initialization
+// Init Sound Synthesizer
+var context = new AudioContext();
+var o = context.createOscillator();
+var g = context.createGain();
+g.connect(context.destination);
+g.gain.setValueAtTime(0, context.currentTime);
+o.connect(g);
+o.start(0);
+context.resume();
+
 // global constants
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
-const maxPatternLen = 8
-const totalButtonCount = 7
+const maxPatternLen = 8;
+const totalButtonCount = 7;
+const minimalDuration = 100;
 
 //Global Variables
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
@@ -12,42 +24,68 @@ var tonePlaying = false;
 var volume = 0.5; //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000; //how long to hold each clue's light/sound
-var mistakeCount = 0
-
+var mistakeCount = 0;
+var secondsBetweenActions = 7;
+var secondsRemaining;
+var timer;
+var level;
+var allowedMistakes;
+var speedUpFactor;
 
 function startGame() {
   //initialize game variables
-  console.log("game starting now")
+  context.resume()
+  console.log("game starting now");
   gamePlaying = true;
-  progress = 0
+  progress = 0;
   clueHoldTime = 1000;
   makeRandomPattern();
   mistakeCount = 0;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  level = document.getElementById("levels");
+  // change variables according to difficulty level
+  if (level.value == "easy") {
+    secondsBetweenActions = 10;
+    speedUpFactor = 0.9;
+    allowedMistakes = 2;
+  }
+  if (level.value == "medium") {
+    secondsBetweenActions = 7;
+    speedUpFactor = 0.7;
+    allowedMistakes = 1;
+  }
+  if (level.value == "hard") {
+    secondsBetweenActions = 5;
+    speedUpFactor = 0.5;
+    allowedMistakes = 0;
+  }
+  updateMistakes();
   playClueSequence();
 }
 function stopGame() {
   //initialize game variables
   gamePlaying = false;
   // swap the Start and Stop buttons
+  clearInterval(timer);
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
 }
 function makeRandomPattern() {
-  var index = 0
-  while (index < maxPatternLen - 1){
-    pattern[index] = Math.round(Math.random() * (totalButtonCount - 1)) + 1
-    index ++ 
+  var index = 0;
+  while (index < maxPatternLen - 1) {
+    pattern[index] = Math.round(Math.random() * (totalButtonCount - 1)) + 1;
+    index++;
   }
-  console.log(pattern)
+  console.log(pattern);
 }
-function loseGame(){
+function loseGame() {
   stopGame();
+  clearInterval(secondsRemaining);
   alert("Game Over. You lost.");
 }
-function winGame(){
+function winGame() {
   stopGame();
   alert("Game Over. You won!");
 }
@@ -67,8 +105,9 @@ function playSingleClue(btn) {
 function playClueSequence() {
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
-  const speedUpFactor = 0.7
-  clueHoldTime = clueHoldTime * speedUpFactor 
+  if (clueHoldTime > minimalDuration){
+    clueHoldTime = clueHoldTime * speedUpFactor;
+  }
   for (let i = 0; i <= progress; i++) {
     // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms");
@@ -76,54 +115,75 @@ function playClueSequence() {
     delay += clueHoldTime;
     delay += cluePauseTime;
   }
+  startTimer();
+  updateProgress()
 }
-function guess(btn){
+function startTimer() {
+  secondsRemaining = secondsBetweenActions;
+  timer = setInterval(function() {
+    updateStatus(secondsRemaining);
+    secondsRemaining--;
+    if (secondsRemaining <= -1) {
+      alertFunc();
+      secondsRemaining = secondsBetweenActions;
+    }
+  }, 1000);
+}
+
+function updateStatus(secondsRemaining) {
+  document.getElementById("clock").innerHTML =
+    secondsRemaining + " seconds remaining";
+}
+
+function updateProgress(){
+  var percentage = (progress / maxPatternLen) * 100
+  var widthText = String(percentage) + '%';
+  document.getElementsByClassName('progress')[0].style.width = widthText;
+}
+
+function alertFunc(secondsRemaining) {
+  clearInterval(timer);
+  loseGame();
+}
+function updateMistakes() {
+  var currCount = allowedMistakes - mistakeCount;
+  document.getElementById("oopsie").innerHTML = currCount + " oopsies allowed";
+}
+function guess(btn) {
   console.log("user guessed: " + btn);
-  if(!gamePlaying){
+  if (!gamePlaying) {
     return;
   }
-  if(pattern[guessCounter] == btn){
+  if (pattern[guessCounter] == btn) {
     //Guess was correct!
-    if(guessCounter == progress){
-      if(progress == pattern.length - 1){
+    if (guessCounter == progress) {
+      if (progress == pattern.length - 1) {
         //GAME OVER: WIN!
+        document.getElementsByClassName('progress')[0].style.width = '100%';
         winGame();
-      }else{
+        clearInterval(timer);
+      } else {
         //Pattern correct. Add next segment
+        clearInterval(timer);
         progress++;
         playClueSequence();
       }
-    }else{
+    } else {
       //so far so good... check the next guess
       guessCounter++;
     }
-  }else{
+  } else {
     //Guess was incorrect
     //GAME OVER: LOSE!
-    if (mistakeCount < 2){
-      mistakeCount ++;
+    if (mistakeCount < allowedMistakes) {
+      mistakeCount++;
+      updateMistakes();
     } else {
+      updateMistakes();
       loseGame();
     }
   }
 }
-
-//   if (btn != pattern[guessCounter]){
-//     loseGame()
-//   } else {
-//     if (guessCounter < progress){
-//       guessCounter ++
-//     } else {
-//       if (progress < pattern.length() - 1){
-//         progress ++
-//         playClueSequence()
-//       }
-//       else{
-//         winGame()
-//       }
-//     }
-//   }
-// }
 
 // Sound Synthesis Functions
 const freqMap = {
@@ -155,12 +215,3 @@ function stopTone() {
   tonePlaying = false;
 }
 
-//Page Initialization
-// Init Sound Synthesizer
-var context = new AudioContext();
-var o = context.createOscillator();
-var g = context.createGain();
-g.connect(context.destination);
-g.gain.setValueAtTime(0, context.currentTime);
-o.connect(g);
-o.start(0);

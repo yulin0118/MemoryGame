@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hello!</title>
+    <title>Yulin's Game</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -14,21 +14,40 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <h1>My First Lil Game!</h1>
+    <h1> Light and Sound Memory Game</h1>
 
     <p>
       Welcome to my game! I hope you enjoy playing it as much as I enjoyed
-      coding this up!:)
+      coding this up! Check out the 
+      <a href="rules.html">rules</a> before you start!:) 
     </p>
 
     <button id="startBtn" onclick="startGame()">Start</button>
     <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
+    <button id="clock" >Timer Display</button>
+    <button id="oopsie">Oopsies Allowed</button>
     
-    <div id="gameButtonArea">
+    <p>
+      <label for="level">Choose a difficulty level</label>
+
+    <select name="levels" id="levels">
+      <option value="easy">easy</option>
+      <option value="medium">medium</option>
+      <option value="hard">hard</option>
+    </select>
+    <div class="container"> 
+        <div class="progress"></div> 
+    </div> 
+    </p>
+    
+    
+    <div id="gameButtonArea1">
       <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
       <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
       <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
       <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
+      </div>
+    <div id="gameButtonArea2">
       <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"></button>
       <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone()"></button>
       <button id="button7" onclick="guess(7)" onmousedown="startTone(7)" onmouseup="stopTone()"></button>
