@@ -14,6 +14,7 @@ const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 const maxPatternLen = 8;
 const totalButtonCount = 7;
+const minimalDuration = 100;
 
 //Global Variables
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
@@ -104,7 +105,9 @@ function playSingleClue(btn) {
 function playClueSequence() {
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
-  clueHoldTime = clueHoldTime * speedUpFactor;
+  if (clueHoldTime > minimalDuration){
+    clueHoldTime = clueHoldTime * speedUpFactor;
+  }
   for (let i = 0; i <= progress; i++) {
     // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms");
@@ -113,6 +116,7 @@ function playClueSequence() {
     delay += cluePauseTime;
   }
   startTimer();
+  updateProgress()
 }
 function startTimer() {
   secondsRemaining = secondsBetweenActions;
@@ -129,6 +133,12 @@ function startTimer() {
 function updateStatus(secondsRemaining) {
   document.getElementById("clock").innerHTML =
     secondsRemaining + " seconds remaining";
+}
+
+function updateProgress(){
+  var percentage = (progress / maxPatternLen) * 100
+  var widthText = String(percentage) + '%';
+  document.getElementsByClassName('progress')[0].style.width = widthText;
 }
 
 function alertFunc(secondsRemaining) {
@@ -149,6 +159,7 @@ function guess(btn) {
     if (guessCounter == progress) {
       if (progress == pattern.length - 1) {
         //GAME OVER: WIN!
+        document.getElementsByClassName('progress')[0].style.width = '100%';
         winGame();
         clearInterval(timer);
       } else {
