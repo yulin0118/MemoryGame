@@ -45,10 +45,12 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/immqajk.gif)
+
 *Before the user starts the game, he can pick a difficulty level; the timer and oopsie count updates accordingly as he clicks start.* 
 
 
 ![](https://i.imgur.com/rTEGWCj.gif)
+
 *The "oopsie count" turns pink when no more mistakes allowed, game ends once user reaches mistake limit.*
 
 
