@@ -3,8 +3,9 @@
 body {
   font-family: georgia, arial, sans-serif;
   margin: 2em;
-  background-color: seashell;
-    color: steelblue; 
+  background: repeating-linear-gradient(aliceblue , aliceblue 20%, mistyrose 80%, mistyrose 100%);
+  color: steelblue; 
+  height: 100vh;
 }
 
 h1 {
@@ -15,7 +16,7 @@ h1 {
 button{
   padding: 10px;
   border-radius: 10px;
-  background-color: AliceBlue;
+  background-color: floralwhite;
 }
 
 
@@ -93,6 +94,10 @@ button{
   background: url(https://cdn.glitch.com/21ea07f7-35e6-4eda-a921-4ebd969a5475%2FB.png?v=1615227218172);
   background-position: center;
   background-size: 200px 200px;
+}
+
+.confetti{
+  display: none;
 }
 
 .hidden {

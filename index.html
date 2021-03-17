@@ -11,17 +11,16 @@
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1> Light and Sound Memory Game</h1>
-
+    
     <p>
       Welcome to my game! I hope you enjoy playing it as much as I enjoyed
       coding this up! Check out the 
       <a href="rules.html">rules</a> before you start!:) 
     </p>
-
     <button id="startBtn" onclick="startGame()">Start</button>
     <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
     <button id="clock" >00:00</button>
@@ -42,6 +41,7 @@
     
     
     <div id="gameButtonArea1">
+      
       <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
       <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
       <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
