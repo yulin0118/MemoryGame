@@ -7,6 +7,7 @@ Submitted by: **Yulin Li**
 Time spent: **15** hours spent in total
 
 Link to project: https://island-real-locust.glitch.me/index.html
+
 *Please open the link with Chrome, for Safari sometimes has trouble with AudioContext used in this project.*
 
 ## Required Functionality
@@ -54,7 +55,7 @@ Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/immqajk.gif)
 
-*Before the user starts the game, he can pick one out of three difficulty levels; the timer and oopsie count updates accordingly as he clicks `start` which becomes `stop` when game is in session.* 
+*Before the user starts the game, he can pick one out of three difficulty levels; the `clock` and `oopsie count` updates accordingly as he clicks `start` which becomes `stop` when game is in session.* 
 
 *When a button is pressed, a picture of the musical note corresponding the frequency played lights up.*
 
