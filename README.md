@@ -47,6 +47,7 @@ Here's a walkthrough of implemented user stories:
 ![](https://i.imgur.com/immqajk.gif)
 
 *Before the user starts the game, he can pick a difficulty level; the timer and oopsie count updates accordingly as he clicks start.* 
+
 ---
 
 ![](https://i.imgur.com/rTEGWCj.gif)
