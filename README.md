@@ -4,9 +4,10 @@
 
 Submitted by: **Yulin Li**
 
-Time spent: **12** hours spent in total
+Time spent: **15** hours spent in total
 
 Link to project: https://island-real-locust.glitch.me/index.html
+*Please open the link with Chrome, for Safari sometimes has trouble with AudioContext used in this project.*
 
 ## Required Functionality
 
@@ -43,16 +44,30 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+![](https://i.imgur.com/v3TpSIy.gif)
+*As the user comes into the website, he is invited to look over an overview of the rules in a sub-page, which also includes some tips and a fun musical challenge.*
+
+----
+
 
 ![](https://i.imgur.com/immqajk.gif)
+*Before the user starts the game, he can pick one out of three difficulty levels; the timer and oopsie count updates accordingly as he clicks `start` which becomes `stop` when game is in session.* 
+*When a button is pressed, a picture of the musical note corresponding the frequency played lights up.*
 
-*Before the user starts the game, he can pick a difficulty level; the timer and oopsie count updates accordingly as he clicks start.* 
+---- 
 
----
+![](https://i.imgur.com/jQglP9f.gif)
+*As the user makes progress, the game speeds up each turn. With every correct sequence played back, the progress bar updates to reflect correct progress. The `clock` turns pink when there is 3 seconds left; the game ends when time runs out a specific turn.*
+
+---- 
+
 
 ![](https://i.imgur.com/rTEGWCj.gif)
+*The `oopsie count` turns pink when no more mistakes allowed, game ends once user reaches mistake limit.*
 
-*The "oopsie count" turns pink when no more mistakes allowed, game ends once user reaches mistake limit.*
+----
+![](https://i.imgur.com/Aw7QhcW.gif)
+*User wins the game after sucessfully guessing the complete pattern. Confetti shows up as celebration!* 
 
 
 
