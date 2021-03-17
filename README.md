@@ -4,9 +4,9 @@
 
 Submitted by: **Yulin Li**
 
-Time spent: **7** hours spent in total
+Time spent: **12** hours spent in total
 
-Link to project: (insert your link here, should start with https://glitch.com...)
+Link to project: https://island-real-locust.glitch.me/index.html
 
 ## Required Functionality
 
@@ -22,19 +22,23 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-- [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-- [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [ ] More than 4 functional game buttons
-* [ ] Playback speeds up on each turn
-* [ ] Computer picks a different pattern each time the game is played
-* [ ] Player only loses after 3 mistakes (instead of on the first mistake)
-* [ ] Game button appearance change goes beyond color (e.g. add an image)
-* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [ ] User has a limited amount of time to enter their guess on each turn
+- [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+- [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+- [x] More than 4 functional game buttons
+- [x] Playback speeds up on each turn
+- [x] Computer picks a different pattern each time the game is played
+- [x] Player only loses after 3 mistakes (instead of on the first mistake)
+- [x] Game button appearance change goes beyond color (e.g. add an image)
+- [x] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app!
+- [x] Progress bar to show how far the user is at each turn 
+- [x] Three difficulty modes to keep challenging the user 
+- [x] Count down clock showing how much time the user has left for each turn  
+- [x] "Oopsies allowed" count, showing how many more mistakes are allowed before the game is lost 
+- [x] A sub page name "rules" to describe the game and a little musical challenge 
+- [x] Confetti when the user wins, implemented with open source code  
 
 ## Video Walkthrough
 
@@ -72,3 +76,26 @@ Here's a walkthrough of implemented user stories:
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    
+## License Of Open Source Used 
+    MIT License
+
+    Copyright (c) 2018 MathuSum Mut
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
