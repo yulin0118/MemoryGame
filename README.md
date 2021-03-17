@@ -47,7 +47,7 @@ Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/v3TpSIy.gif)
 
-*As the user comes into the website, he is invited to look over an overview of the rules in a sub-page, which also includes some tips and a fun musical challenge.*
+*As the user comes into the website, he is invited to look over an overview of the rules in a sub-page, which also includes some tips, a fun musical challenge, and a link back to the main page.*
 
 ----
 
@@ -62,7 +62,7 @@ Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/jQglP9f.gif)
 
-*As the user makes progress, the game speeds up each turn. With every correct sequence played back, the progress bar updates to reflect correct progress. The `clock` turns pink when there is 3 seconds left; the game ends when time runs out a specific turn.*
+*As the user makes progress, the game speeds up each turn. With every correct sequence guessed, the progress bar updates to reflect current progress. The `clock` turns pink when there is 3 seconds left; the game ends when time runs out a specific turn.*
 
 ---- 
 
