@@ -22,19 +22,23 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-- [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-- [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [ ] More than 4 functional game buttons
-* [ ] Playback speeds up on each turn
-* [ ] Computer picks a different pattern each time the game is played
-* [ ] Player only loses after 3 mistakes (instead of on the first mistake)
-* [ ] Game button appearance change goes beyond color (e.g. add an image)
-* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [ ] User has a limited amount of time to enter their guess on each turn
+- [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+- [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+- [x] More than 4 functional game buttons
+- [x] Playback speeds up on each turn
+- [x] Computer picks a different pattern each time the game is played
+- [x] Player only loses after 3 mistakes (instead of on the first mistake)
+- [x] Game button appearance change goes beyond color (e.g. add an image)
+- [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
+- [x] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app!
+- [x] Progress bar to show how far the user is at each turn 
+- [x] Three difficulty modes to keep challenging the user 
+- [x] Count down clock showing how much time the user has left for each turn  
+- [x] "Oopsies allowed" count, showing how many more mistakes are allowed before the game is lost 
+- [x] A sub page name "rules" to describe the game and a little musical challenge 
 
 ## Video Walkthrough
 

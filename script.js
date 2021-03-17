@@ -44,10 +44,11 @@ function startGame() {
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  document.getElementById("oopsie").style.backgroundColor = "AliceBlue";
   level = document.getElementById("levels");
   // change variables according to difficulty level
   if (level.value == "easy") {
-    secondsBetweenActions = 10;
+    secondsBetweenActions = 9;
     speedUpFactor = 0.9;
     allowedMistakes = 2;
   }
@@ -69,8 +70,16 @@ function stopGame() {
   gamePlaying = false;
   // swap the Start and Stop buttons
   clearInterval(timer);
+  resetStatusButtons();
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
+}
+function resetStatusButtons(){
+  document.getElementById("clock").innerHTML ="00:00";
+  document.getElementById("oopsie").innerHTML ="oopsies";
+  document.getElementById("oopsie").style.backgroundColor = "AliceBlue";
+  document.getElementById("clock").style.backgroundColor = "AliceBlue";
+  document.getElementsByClassName('progress')[0].style.width = '0%';
 }
 function makeRandomPattern() {
   var index = 0;
@@ -87,6 +96,7 @@ function loseGame() {
 }
 function winGame() {
   stopGame();
+  resetClockColor()
   alert("Game Over. You won!");
 }
 function lightButton(btn) {
@@ -132,8 +142,16 @@ function startTimer() {
 
 function updateStatus(secondsRemaining) {
   document.getElementById("clock").innerHTML =
-    secondsRemaining + " seconds remaining";
+    "00:0" + secondsRemaining;
+  if (secondsRemaining <= 3){
+    document.getElementById("clock").style.backgroundColor = "MistyRose";
+  }
 }
+
+function resetClockColor(){
+  document.getElementById("clock").style.backgroundColor = "AliceBlue";
+}
+
 
 function updateProgress(){
   var percentage = (progress / maxPatternLen) * 100
@@ -147,7 +165,10 @@ function alertFunc(secondsRemaining) {
 }
 function updateMistakes() {
   var currCount = allowedMistakes - mistakeCount;
-  document.getElementById("oopsie").innerHTML = currCount + " oopsies allowed";
+  if (currCount == 0){
+    document.getElementById("oopsie").style.backgroundColor = "MistyRose";
+  }
+  document.getElementById("oopsie").innerHTML = currCount + " oopsies left";
 }
 function guess(btn) {
   console.log("user guessed: " + btn);
@@ -164,6 +185,7 @@ function guess(btn) {
         clearInterval(timer);
       } else {
         //Pattern correct. Add next segment
+        resetClockColor()
         clearInterval(timer);
         progress++;
         playClueSequence();
