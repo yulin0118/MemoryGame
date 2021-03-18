@@ -55,27 +55,27 @@ Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/xDDnL3N.gif)
 
-*Before the user starts the game, he can pick one out of three difficulty levels; the `clock` and `oopsie count` updates accordingly as he clicks `start` which becomes `stop` when game is in session.* 
+*Before the user starts the game, he can pick one out of three difficulty levels; the `clock` and `oopsie count` updates accordingly as he clicks `start`, which becomes `stop` when game is in session.* 
 
-*When a button is pressed, a picture of the musical note corresponding the frequency played lights up.*
+*When a button is pressed, a picture of the musical note corresponding the pitch played lights up.*
 
 ---- 
 
 ![](https://i.imgur.com/jQglP9f.gif)
 
-*As the user makes progress, the game speeds up each turn. With every correct sequence guessed, the progress bar updates to reflect current progress. The `clock` turns pink when there is 3 seconds left; the game ends when time runs out a specific turn.*
+*As the user makes progress, the game speeds up each turn. With every correct sequence guessed, the progress bar updates to reflect current status. The `clock` turns pink when there are 3 seconds left; the user loses the game if timer runs out before he completes his guess correctly.*
 
 ---- 
 
 
 ![](https://i.imgur.com/rTEGWCj.gif)
 
-*The `oopsie count` turns pink when no more mistakes allowed, game ends once user reaches mistake limit.*
+*The `oopsie count` turns pink when no more mistakes are allowed, game ends once user reaches mistake limit.*
 
 ----
 ![](https://i.imgur.com/Aw7QhcW.gif)
 
-*User wins the game after sucessfully guessing the complete pattern. Confetti shows up as celebration!* 
+*User wins the game after sucessfully guessing the complete pattern. **Confetti** shows up as celebration!* 
 
 
 
