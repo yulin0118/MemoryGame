@@ -53,7 +53,7 @@ Here's a walkthrough of implemented user stories:
 ----
 
 
-![](https://i.imgur.com/immqajk.gif)
+![](https://i.imgur.com/xDDnL3N.gif)
 
 *Before the user starts the game, he can pick one out of three difficulty levels; the `clock` and `oopsie count` updates accordingly as he clicks `start` which becomes `stop` when game is in session.* 
 
