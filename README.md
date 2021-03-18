@@ -92,7 +92,10 @@ Here's a walkthrough of implemented user stories:
 [YOUR ANSWER HERE]
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+On a more surface level, I wonder how I can better incorporate open source CSS into my code to better my design. I also would love to learn more about good practices in the industry when it comes to organizing web development code and documentation. I was lucky to have learned about good software development practices in school, I appreciate the difference it can make especially when working with a team, and I wonder how I can transfer such skills to web development. Along the lines of transferring software development skills, I wonder about the standards and goals for optimizing web code, for example, how time / space complexity are weighted, and how we tell good web code design from bad. Getting the code to work and the interface pleasing is only my first step, I would like to learn more about writing good and scalable code. 
+Additionally, after having the HTML, CSS, Javascript basics down, I would love to extend web development skillset by learning to work with newer technologies such as Node/Express and React. 
+
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
 
