@@ -57,7 +57,7 @@ Here's a walkthrough of implemented user stories:
 
 *Before the user starts the game, he can pick one out of three difficulty levels; the `clock` and `oopsie count` updates accordingly as he clicks `start`, which becomes `stop` when game is in session.* 
 
-*When a button is pressed, a picture of the musical note corresponding the pitch played lights up.*
+*When a button is pressed, a picture of the musical note corresponding the pitch played lights up; the pattern is randomly generated at the start of each game.*
 
 ---- 
 
