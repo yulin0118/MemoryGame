@@ -85,6 +85,7 @@ Here's a walkthrough of implemented user stories:
 - I used W3School to learn about the <script> element, element property manipulation, how to style with CSS, how to include images etc. 
 - I used StackOverflow for when I ran into specific bugs. 
 - I asked some friends to play the game along my development process, pointing out features they might enjoy, designs that can be improved, and minor bugs in corner cases. 
+- I asked some friends to play the game along my development process, pointing out features they might enjoy, designs that can be improved, and minor bugs in corner cases. 
 
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
