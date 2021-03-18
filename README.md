@@ -94,7 +94,11 @@ Here's a walkthrough of implemented user stories:
 [YOUR ANSWER HERE]
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+	If I had a few more hours to work on this project, I would have firstly tried to clean up the code before implementing additional features. Specifically, since I was learning / experimenting with a lot of the things I implemented and adding additional features as I went along, I did not start with a good blueprint of how to structure my code, which left some functions and CSS classes messy and hard to abstract for further development. More specifically, I would refactor the `update status` functions into two, one for updating the display each turn and another for resetting the display when a new game starts. Additionally, I would look at some similar websites with better visual design and try to implement better CSS code to make the interface more user-friendly and aesthetically pleasing. For example, the current interface has the same design for the `start` button and the `timer`, which might be visually confusing, since one is clickable and the other is not. I would research some design principles, organize them into different divs in HTML and do some AB testing to better the design. 
+	
+ 	Functionality wise, I would add another version of this game where instead of single notes, chords are played without showing the user which buttons were pressed, and the user would have to guess which notes were in that chord. For better user experience, I would allow the user a certain amount of time to play with the buttons before they drag their guesses into a submission box. This would be a fun game for music students to play while working on their chord recognition skills. Additionally, I would add a shuffle button to switch up the lineup of the buttons to keep the game interesting for longer. Finally, I would experiment with the sound synthesis code or try to import audio files to add an option where the notes sound as they would on a piano, to better fit the needs of music students. 
+
 
 
 
