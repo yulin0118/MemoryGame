@@ -89,7 +89,13 @@ Here's a walkthrough of implemented user stories:
 
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+
+	A challenge that I encountered in implementing this game was my initial lack of understanding of AudioContext as it was used in this project. At first I simply followed the tutorial and added the provided code snippet into my javascript without really understanding its properties or behaviors. The issue arose when I started testing the code with my website open in a separate page; despite having implemented the `play tones` functions correctly to my understanding, no tones were played when I clicked `start`. To make matters worse, this issue did not exist when I tested the game on the same page as the editor as I fiddled with the code, which in a sense made it a “heisenbug.” 
+	
+	Eventually, through looking at the console log outputs where the bug occured, I was able to identify it down to an error regarding AudioContext not being allowed to start on a new page. Lost about what it meant, I searched the error message and learned that Chrome’s autoplay policy was changed in 2018, after which `resume( )` needs to be called for an AudioContext object before a web page is allowed to play any audio. Following this hint and studying a couple more examples on StackOverflow, I was able to solve the issue by moving the sound synthesis code to the beginning and calling `resume( )` within the `startGame` function. 
+I could have moved on at this point as I had resolved the bug, however, in my attempt to resolve this issue, I realized how little I understood AudioContext and came to recognize that I should not have code I do not understand at all in my program. I was then inspired to look into the AudioContext documentation and gained a high level understanding of its functions and potential applications through looking over relevant projects published on GitHub and questions on StackOverflow. 
+This experience showed me again the importance of being resourceful and the ability to learn on my own especially in the field of software engineering. 
+
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 
